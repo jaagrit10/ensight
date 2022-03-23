@@ -73,11 +73,9 @@ export default function Banner() {
                 </div>
 
                 <div className="w-1/2 p-6">
-                    <img
-                        src="/images/logofinal.png"
-                        alt=""
-                        className="w-full object-contain"
-                    />
+                    <video controls className="rounded-xl">
+                        <source src="intro.mp4" type="video/mp4"/>
+                    </video>
                 </div>
             </div>
         </div>

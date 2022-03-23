@@ -15,14 +15,31 @@ function CourseDetails({ renderer }) {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className="flex flex-col h-full bg-sky-100">
+            <main className="flex flex-col h-full bg-sky-100 overflow-y-scroll scrollbar-hide">
                 <Navbar />
                 <div className=" w-[80%] mx-auto">
-                    <h1 className="text-center text-4xl font-comicsans py-6">{renderer?.title}</h1>
-
-                    <p className="text-lg">{renderer?.data}</p>
-
-                    <button>Go to Course</button>
+                    <h1 className="text-center text-4xl font-comicsans py-6">
+                        {renderer?.title}
+                    </h1>
+                    <div className="flex">
+                        <div className="w-1/2 flex flex-col justify-between">
+                            <p className="text-lg">{renderer?.data}</p>
+                            <button className=" px-10 py-4 bg-blue-500 text-white rounded-xl ml-auto mr-4 mb-10">
+                                Go to Course
+                            </button>
+                        </div>
+                        <div className="w-1/2">
+                            {/*  eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                                src={
+                                    "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/1646-GDU-Learn_to_Code_Blog_Header_.max-1000x1000.png"
+                                }
+                                objectFit="contain"
+                                alt="image"
+                                // className="my-auto"
+                            />
+                        </div>
+                    </div>
                 </div>
             </main>
         </div>
@@ -39,7 +56,6 @@ export async function getServerSideProps(context) {
 
     const renderer = data?.docs?.[0].data();
 
-    console.log(data);
     return {
         props: {
             renderer,

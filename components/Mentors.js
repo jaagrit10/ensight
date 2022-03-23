@@ -32,8 +32,8 @@ function Mentors() {
 
   return (
     <>
-    <div className="w-full max-w-xs">
-      <form onSubmit={handleSubmit} className="bg-blue-400 ali justify-between shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="">
+      <form onSubmit={handleSubmit} className="bg-blue-400 ali justify-between shadow-md rounded px-16 pt-6 pb-8 mb-4">
         <div className="form-group pd-2 mx-2 my-2 mb-4">
         <div className="mb-4">
 

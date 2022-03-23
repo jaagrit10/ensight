@@ -3,8 +3,9 @@ import React from "react";
 import { db } from "../../firebase/firebase";
 import Head from "next/head";
 import Navbar from "../../components/Navbar";
-
+import { useRouter } from "next/router";
 function CourseDetails({ renderer }) {
+    const router = useRouter();
     return (
         <div className="h-screen w-screen overflow-hidden">
             <Head>
@@ -24,7 +25,7 @@ function CourseDetails({ renderer }) {
                     <div className="flex">
                         <div className="w-1/2 flex flex-col justify-between">
                             <p className="text-lg">{renderer?.data}</p>
-                            <button className=" px-10 py-4 bg-blue-500 text-white rounded-xl ml-auto mr-4 mb-10">
+                            <button  onClick={()=>{router.push("/comingsoon/soon")}} className=" px-10 py-4 bg-blue-500 text-white rounded-xl ml-auto mr-4 mb-10">
                                 Go to Course
                             </button>
                         </div>

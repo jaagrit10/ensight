@@ -1,9 +1,10 @@
+import React from 'react'
+import Mentors from '../../components/Mentors'
 import Head from 'next/head'
-import Banner from '../components/Banner'
-import Navbar from '../components/Navbar'
-import Mentors from '../components/Mentors';
+import Navbar from '../../components/Navbar'
 
-export default function Home() {
+
+function Apply() {
   return (
     <div className="h-screen w-screen overflow-hidden">
       <Head>
@@ -13,10 +14,14 @@ export default function Home() {
       </Head>
       <main className='flex flex-col h-full bg-sky-100'>
         <Navbar/>
-        <Banner/>
-        {/* <Mentors></Mentors> */}
+        <h1 className="font-extrabold text-4xl mx-auto font-comicsans mt-4  ">Mentorship Form</h1>
+        <div className="mx-auto mt-28">
+        <Mentors/>
+        </div>
       </main>
       
     </div>
   )
 }
+
+export default Apply

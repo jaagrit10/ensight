@@ -31,6 +31,7 @@ function Courses() {
                         title={doc.data().title}
                         link={doc.data().link}
                         key={doc.data().link}
+                        image={doc.data().logo}
                     />
                 ))}
             </div>
@@ -43,8 +44,10 @@ export default Courses;
 const CourseCard = (props) => {
     const router = useRouter();
     return (
-        <div className="font-comicsans flex flex-col justify-between items-center h-40 bg-blue-300 pt-10 pb-5 m-5 rounded-2xl">
+        <div className="font-comicsans flex flex-col justify-between items-center bg-blue-300 pt-5 pb-5 m-5 rounded-2xl space-y-4">
+
             <p className="text-xl">{props.title}</p>
+            <img  className="p2 my-1" src={`/images/logos/${props.image}.png`} alt="" style={{"width": '50px', "height": '50px', }} />
             <button
                 onClick={() => router.push(`/programs/${props.link}`)}
                 className="bg-blue-500 px-10 py-2 rounded-lg"

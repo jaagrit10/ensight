@@ -37,12 +37,14 @@ export default function Navbar() {
                 >
                     Courses
                 </p>
-                <p
+                <a
                     className="cursor-pointer text-white font-comicsans"
-                    onClick={() => router.push("/roadmaps")}
+                    href="https://roadmap.sh/"
+                    rel={"noreferrer"}
+                    target={"_blank"}
                 >
                     Roadmaps
-                </p>
+                </a>
                 <p
                     className="cursor-pointer text-white font-comicsans"
                     onClick={() => router.push("/fields")}

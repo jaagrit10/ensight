@@ -26,7 +26,7 @@ function Departments() {
                         className="rounded mx-4 text-xl bg-blue-300 p-[0.5rem] hover:bg-blue-800 hover:text-white"
                         onClick={() => setDep("ee")}
                     >
-                        Electrical
+                        EE
                     </button>
                 </div>
 

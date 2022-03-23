@@ -1,5 +1,8 @@
+import { useRouter } from "next/router";
+
 /* eslint-disable @next/next/no-img-element */
 export default function Banner() {
+    const router = useRouter();
     return (
         <div className="h-[calc(100vh-5rem) flex flex-col w-[75vw] mx-auto overflow-y-scroll scrollbar-hide">
             <div className="bg-white mt-16 flex items-center justify-center rounded-lg shadow-2xl">
@@ -9,12 +12,19 @@ export default function Banner() {
             </div>
 
             <div className="flex items-center justify-between w-full my-[3rem]">
-                <div className="w-[22rem] font-[600] space-y-1">
+                <div className="w-1/2 font-[600] space-y-1">
                     <p className="text-lg">The only programme with</p>
                     <p className="text-4xl font-comicsans font-black">
-                        Instant doubt Support and Mentorship
+                        Access to multiple courses<br/> and Instant Mentorship
                     </p>
                     <p className="text-lg">from the best</p>
+                    <br/>
+                    <div className="text-sm font-bold">
+                        <p>Wish you had an elder sibling who could walk you through each</p>
+                        <p>and every uncertainty you have? At your convinience. Do not</p>
+                        <p>worry we are here, We&apos;ll provide a platform for all your doubts</p>
+                        <p></p>
+                    </div>
                 </div>
 
                 <img
@@ -39,7 +49,7 @@ export default function Banner() {
                         dude.
                     </p>
 
-                    <button className="bg-white px-12 mt-4 py-1 rounded-lg font-[500]">Explore Programs</button>
+                    <button className="bg-white px-12 mt-4 py-1 rounded-lg font-[500]" onClick={()=>router.push('/programs')}>Explore Programs</button>
                 </div>
 
                 <div className="w-1/2 p-6">

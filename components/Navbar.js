@@ -1,6 +1,7 @@
 import { signInWithPopup, signOut } from "firebase/auth";
 import { auth, provider } from "../firebase/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 export default function Navbar() {
     const signIn = () => {
         signInWithPopup(auth, provider);
@@ -11,26 +12,49 @@ export default function Navbar() {
     };
 
     const [user] = useAuthState(auth);
-
+    const router = useRouter();
     return (
-        <div className="h-20 shadow-xl px-10 py-2 bg-blue-500 flex items-center">
+        <div className="h-20 shadow-xl px-10 py-2 bg-blue-500 flex items-center text-lg">
             <div className="h-full flex px-20 w-1/3">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                     src="/images/logofinal.png"
                     alt="ensight"
                     className="h-full object-contain cursor-pointer"
+                    onClick={() => router.push("/")}
                 />
             </div>
-            <div className="w-1/3 flex items-center justify-between">
-                <p className="cursor-pointer text-white font-comicsans">
-                    Explore Programs
+            <div className="w-2/3 flex items-center justify-end h-full py-3 space-x-8 cursor-pointer">
+                <p
+                    className="cursor-pointer text-white font-comicsans"
+                    onClick={() => router.push("/mentorship")}
+                >
+                    Mentorships
                 </p>
-                <p className="cursor-pointer text-white font-comicsans">
+                <p
+                    className="cursor-pointer text-white font-comicsans"
+                    onClick={() => router.push("/programs")}
+                >
+                    Courses
+                </p>
+                <p
+                    className="cursor-pointer text-white font-comicsans"
+                    onClick={() => router.push("/roadmaps")}
+                >
+                    Roadmaps
+                </p>
+                <p
+                    className="cursor-pointer text-white font-comicsans"
+                    onClick={() => router.push("/departments")}
+                >
+                    Departments
+                </p>
+                <p
+                    className="cursor-pointer text-white font-comicsans"
+                    onClick={() => router.push("/faqs")}
+                >
                     FAQ&apos;s
                 </p>
-            </div>
-            <div className="w-1/3 flex items-center justify-end h-full py-3 space-x-2 cursor-pointer">
                 {!user ? (
                     <>
                         <p
@@ -49,7 +73,7 @@ export default function Navbar() {
                     </>
                 ) : (
                     <p
-                        className="cursor-pointer text-white font-comicsans"
+                        className="cursor-pointer text-white font-comicsans underline"
                         onClick={signout}
                     >
                         Hi, {user.displayName}

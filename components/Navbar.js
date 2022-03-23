@@ -45,7 +45,7 @@ export default function Navbar() {
                 </p>
                 <p
                     className="cursor-pointer text-white font-comicsans"
-                    onClick={() => router.push("/departments")}
+                    onClick={() => router.push("/fields")}
                 >
                     Departments
                 </p>

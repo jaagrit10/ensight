@@ -7,7 +7,7 @@ export default function Banner() {
         <div className="h-[calc(100vh-5rem) flex flex-col w-[75vw] mx-auto overflow-y-scroll scrollbar-hide">
             <div className="bg-white mt-16 flex items-center justify-center rounded-lg shadow-2xl">
                 <p className="py-[1.5rem] font-comicsans text-2xl">
-                    Initiative for the students, by the students
+                    Initiative for the students, by the students, from the students
                 </p>
             </div>
 
